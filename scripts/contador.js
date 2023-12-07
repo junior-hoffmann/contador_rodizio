@@ -7,12 +7,24 @@ let placarDoce = document.getElementById('placar-doce')
 let qtdSalgadas = 0
 let qtdDoces = 0
 
-btnSalgada.addEventListener('click', ()=>{
+btnSalgada.addEventListener('click', () => {
     qtdSalgadas++
     placarSalgada.innerText = qtdSalgadas
+    salvarBD()
 })
 
-btnDoce.addEventListener('click', ()=>{
+btnDoce.addEventListener('click', () => {
     qtdDoces++
     placarDoce.innerText = qtdDoces
+    salvarBD()
 })
+
+btnResetar.addEventListener('click', ()=>{
+    zerarBD()
+    atualizarQuantidades()
+})
+
+function atualizarQuantidades() {
+    placarSalgada.innerText = qtdSalgadas
+    placarDoce.innerText = qtdDoces
+}
